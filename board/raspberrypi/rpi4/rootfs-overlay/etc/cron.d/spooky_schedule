@@ -1,0 +1,2 @@
+33 3 * * * root /usr/local/bin/spooky_prompt_on.sh
+0 4 * * * root /usr/local/bin/spooky_prompt_off.sh
