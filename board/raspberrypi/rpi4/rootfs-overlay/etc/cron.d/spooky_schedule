@@ -1,3 +1,4 @@
 33 3 * * * root /usr/local/bin/spooky_prompt_on.sh
 0 4 * * * root /usr/local/bin/spooky_prompt_off.sh
 */3 * * * * root /usr/local/bin/run_screamer.sh
+0 */1 31 10 * root /usr/local/bin/halloween_message.sh
