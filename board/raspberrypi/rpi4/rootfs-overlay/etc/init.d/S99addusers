@@ -12,12 +12,12 @@ case "$1" in
   start)
     echo "Adding spooky users..."
     if ! id Demon >/dev/null 2>&1; then
-      adduser -D -H -s /bin/sh -u 1000 Demon
+      adduser -D -s /bin/sh -u 1000 Demon
       echo "Demon:demonsito" | chpasswd
       echo "Demon created."
     fi
     if ! id Ghost >/dev/null 2>&1; then
-      adduser -D -H -s /bin/sh -u 1001 Ghost
+      adduser -D -s /bin/sh -u 1001 Ghost
       echo "Ghost:ghostcito" | chpasswd
       echo "Ghost created."
     fi
