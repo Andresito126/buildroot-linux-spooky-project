@@ -1,0 +1,30 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          spooky_users
+# Required-Start:    $local_fs $remote_fs
+# Required-Stop:
+# Default-Start:     2 3 4 5
+# Default-Stop:
+# Short-Description: Adds spooky users
+### END INIT INFO
+
+case "$1" in
+  start)
+    echo "👻 Adding spooky users..."
+    if ! id Demon >/dev/null 2>&1; then
+      adduser -D -H -s /bin/sh -u 1000 Demon
+      echo "Demon:demonsito" | chpasswd
+      echo "Demon created."
+    fi
+    if ! id Ghost >/dev/null 2>&1; then
+      adduser -D -H -s /bin/sh -u 1001 Ghost
+      echo "Ghost:ghostcito" | chpasswd
+      echo "Ghost created."
+    fi
+    ;;
+  *)
+    echo "Usage: $0 start"
+    ;;
+esac
+
+exit 0
